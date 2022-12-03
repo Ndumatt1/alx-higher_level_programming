@@ -2,11 +2,10 @@
 
 if __name__ == '__main__':
 
-    import add_0
+    import add_0 as addition
 
     a = 1
     b = 2
-    result = add_0.add(a, b)
-    #add(a, b)
+    result = addition.add(a, b)
 
     print("{:d} + {:d} = {:d}".format(a, b, result))
