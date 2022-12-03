@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
-from add_0 import add
+if __name__ == '__main__':
 
-if __name__ == '__add__':
-    add()
-a = 1
-b = 2
-result = a + b
+    from add_0 import add
 
-add(a, b)
+    a = 1
+    b = 2
+    result = a + b
+    add(a, b)
 
-print("{:d} + {:d} = {:d}".format(a, b, result))
-
+    print("{:d} + {:d} = {:d}".format(a, b, result))
