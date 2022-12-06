@@ -3,13 +3,11 @@ if __name__ == '__main__':
 
     from sys import argv
 
-    number = len(argv)
-
-    if number == 1:
+    if len(argv) == 1:
         add = 0
     else:
-        for i in range(1, number):
-            add = 0
+        add = 0
+        for i in range(1, len(argv)):
             num = int(argv[i])
             add += num
-            print("{:d}".format(add))
+        print("{:d}".format(add))
