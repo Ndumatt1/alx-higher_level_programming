@@ -32,11 +32,9 @@ class Square:
         """ prints to stdout the square with the character # """
         num = self.__size
         if num == 0:
-           print()
+            print()
         else:
             for i in range(num):
                 for j in range(num):
                     print("#", end='')
                 print()
-    #def area(self):
-        #return self.size * self.size
