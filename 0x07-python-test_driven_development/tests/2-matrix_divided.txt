@@ -1,0 +1,39 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix_divided(matrix, 3.0)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix.append([2.7, 6.5, 9.8])
+>>> matrix_divided(matrix, 5)
+[[0.2, 0.4, 0.6], [0.8, 1.0, 1.2], [0.54, 1.3, 1.96]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/matthewlinux/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 17, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+>>> matrix_divided(matrix, 'my')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/matthewlinux/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> matrix.append([1])
+>>> matrix_divided(matrix, 5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/matthewlinux/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 13, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> matrix.pop()
+[1]
+>>> matrix.pop()
+[2.7, 6.5, 9.8]
+>>> matrix.append(['my', 'boy', 'girl'])
+>>> matrix_divided(matrix, 5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/matthewlinux/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 10, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
