@@ -27,6 +27,11 @@ class Rectangle:
     @property
     def height(self):
         """ getter function to return the value of height. """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """ setter function to set the value of height"""
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         elif value < 0:
@@ -41,7 +46,7 @@ class Rectangle:
         """ returns the rectangle perimeter. """
         if self.width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width * self.__height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """ str method to print the rectangle with  character #"""
@@ -51,7 +56,8 @@ class Rectangle:
         for row in range(self.__height):
             for col in range(self.__width):
                 s += "#"
-            s += "\n"
+            if (row + 1) is not self.height:
+                s += "\n"
         return s
 
     def __repr__(self):
