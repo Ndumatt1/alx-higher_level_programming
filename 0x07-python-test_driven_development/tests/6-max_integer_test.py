@@ -17,3 +17,5 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, -3, 4]), 4)
     def test_max_in_beginning(self):
         self.assertEqual(max_integer([9, 3, 4, 1, 8]), 9)
+    def test_if_only_one_element(self):
+        self.assertEqual(max_integer([4]), 4)   
