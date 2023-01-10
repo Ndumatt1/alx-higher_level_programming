@@ -30,7 +30,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def __str__(self):
-        """ str method to print out string. """    
+        """ str method to print out string. """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
     def area(self):
