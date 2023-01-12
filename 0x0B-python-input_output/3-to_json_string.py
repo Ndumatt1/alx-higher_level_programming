@@ -8,4 +8,5 @@ def to_json_string(my_obj):
     Parameters:
     my_obj - object to return.
     """
-    return json.dumps(my_obj)
+    json_object = json.dumps(my_obj)
+    return json_object
