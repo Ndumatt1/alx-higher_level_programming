@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" This module adds all arguments to python list,
+and then save them to a file
+"""
 import json
 import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
