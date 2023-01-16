@@ -91,7 +91,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """ prints in stdout the Rectangle instance with the character '#' """ 
+        """ prints in stdout the Rectangle instance with the character '#' """
         for y in range(self.__y):
             print()
         for height in range(self.__height):
@@ -101,8 +101,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ str method. """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,\
-             self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """ assigns argument to each attribute in argument order. """
@@ -132,7 +131,13 @@ class Rectangle(Base):
                     self.__x = value
                 if key == "y":
                     self.__y = value
+
     def to_dictionary(self):
         """ returns dictionasry representation of a Rectangle"""
-        s = {'id':self.id, 'width':self.__width, 'height':self.__height, 'x':self.__x, 'y':self.__y}
+        id = self.id
+        width = self.__width
+        height = self.__height
+        x = self.__x
+        y = self.__y
+        s = {'id': id, 'width': width, 'height': height, 'x': x, 'y': y}
         return s
