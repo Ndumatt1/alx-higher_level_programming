@@ -8,7 +8,7 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-def run():    
+def run():
     """ Stores the arguments"""
     del argv[0]
     try:
@@ -19,5 +19,5 @@ def run():
     save_to_json_file(args, 'add_item.json')
 
 
-if __name__  == '__main__':
+if __name__ == '__main__':
     run()
