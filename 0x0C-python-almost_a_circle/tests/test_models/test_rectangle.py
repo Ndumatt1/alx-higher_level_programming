@@ -3,6 +3,8 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import sys
+import io
 
 
 class test_rectangle(unittest.TestCase):
@@ -42,3 +44,19 @@ class test_rectangle(unittest.TestCase):
         rect1 = Rectangle(4, 5)
         self.assertEqual(rect.area(), 9)
         self.assertEqual(rect1.area(), 20)
+
+    def test_output(self):
+        """ tests that the output is the same with the expected output."""
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rect = Rectangle(3, 4)
+        rect.display()
+        sys.stdout = sys.__stdout__
+        expected_output = ("#" * rect.width+ '\n') * rect.height
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def test_str(self):
+        """ test for the magic method __str__"""
+        output = "[Rectangle] (12) 2/1 - 4/5"
+        rect = Rectangle(4, 5, 2, 1, 12)
+        self.assertEqual(str(rect), output)
