@@ -84,13 +84,13 @@ class test_rectangle(unittest.TestCase):
 
     def text_x_exception(self):
         """ test if x raises expected exception when x is not an integer"""
-        rect = Rectangle(10, 10)
+        rect = Rectangle(10, 10, 8)
         with self.assertRaises(TypeError):
             rect.x = 'my'
 
     def test_x_under_zero(self):
         """ test for when x is less than zero"""
-        rect = Rectangle(10, 2)
+        rect = Rectangle(10, 2, 9)
         with self.assertRaises(ValueError):
             rect.x = -9
 
@@ -120,4 +120,9 @@ class test_rectangle(unittest.TestCase):
         """ test for when y is less than 0"""
         rect = Rectangle(1, 4, 8)
         with self.assertRaises(ValueError):
-            rect.y = -2
+            rect.y = -1
+
+    def test_area(self):
+        """ tests for the area of the triangle."""
+        rect = Rectangle(3, 3)
+        self.assertEqual(rect.area(), 9)
