@@ -15,7 +15,7 @@ module.exports = class Rectangle {
     for (let i = 0; i < this.height; i++) {
       let square = '';
       for (let j = 0; j < this.width; j++) {
-        square += 'x';
+        square += 'X';
       }
       console.log(`${square}`);
     }
