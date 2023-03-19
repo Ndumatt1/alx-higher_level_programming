@@ -5,16 +5,16 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from sys import argv
 
-user = argv[1]
-passwd = argv[2]
-db_name = argv[3]
+if __name__ == '__main__':
+    user = argv[1]
+    pswd = argv[2]
+    db = argv[3]
 
-engine = create_engine(f'mysql+mysqldb://{user}:{passwd}@localhost/{db_name}')
+    engine = create_engine(f'mysql+mysqldb://{user}:{pswd}@localhost/{db}')
 
-session = Session(engine)
+    session = Session(engine)
 
-query = session.query(State).order_by(State.id).all()
+    query = session.query(State).order_by(State.id).all()
 
-for state in query:
-    print('{}: {}'.format(state.id, state.name))
-session.close()
+    for state in query:
+        print('{}: {}'.format(state.id, state.name))
