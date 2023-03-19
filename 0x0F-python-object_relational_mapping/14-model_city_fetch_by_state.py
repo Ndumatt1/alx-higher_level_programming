@@ -10,6 +10,7 @@ if __name__ == '__main__':
     user, pswd, db = argv[1:4]
     engine = create_engine(f'mysql+mysqldb://{user}:{pswd}@localhost/{db}')
     session = Session(engine)
-    query = session.query(City).join(State).order_by(City.id).all()
+    query = session.query(City).join(State, City.state_id == State.id). \
+        order_by(City.id).all()
     for record in query:
         print(f'{record.state.name}: ({record.id}) {record.name}')
