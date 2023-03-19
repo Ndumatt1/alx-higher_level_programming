@@ -15,7 +15,7 @@ if __name__ == '__main__':
     connect = MySQLdb.connect("localhost", username, password, db_name)
     curs = connect.cursor()
     sql = "SELECT * FROM states WHERE \
-        states.name = '{}' ORDER BY states.id ASC".format(name)
+        BINARY name = '{}' ORDER BY states.id ASC".format(name)
     curs.execute(sql)
     records = curs.fetchall()
     for record in records:
