@@ -12,10 +12,9 @@ if __name__ == '__main__':
     pswd = argv[2]
     db = argv[3]
     engine = create_engine(f'mysql+mysqldb://{user}:{pswd}@localhost/{db}')
-    Base.metadata.create_all(engine)
     session = Session(engine)
-    if not State:
-        print()
-    query = session.query(State).order_by(State.id).first()
-    print('{}: {}'.format(query.id, query.name))
-    session.close()
+    query = session.query(State).first()
+    if query is None:
+        print('Nothing')
+    else:
+        print('{}: {}'.format(query.id, query.name))
