@@ -12,3 +12,4 @@ if __name__ == '__main__':
     session = Session(engine)
     session.query(State).filter(State.name.like('%a%')).delete()
     session.commit()
+    session.close()
