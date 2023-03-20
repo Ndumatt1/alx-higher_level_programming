@@ -11,7 +11,6 @@ if __name__ == '__main__':
     db = argv[3]
 
     engine = create_engine(f'mysql+mysqldb://{user}:{pswd}@localhost/{db}')
-    Base.metadata.create_all(engine)
 
     session = Session(engine)
 
@@ -19,4 +18,3 @@ if __name__ == '__main__':
 
     for state in query:
         print('{}: {}'.format(state.id, state.name))
-    session.close()
