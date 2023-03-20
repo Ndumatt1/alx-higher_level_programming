@@ -10,5 +10,7 @@ if __name__ == '__main__':
     user, pswd, db = argv[1:4]
     engine = create_engine(f'mysql+mysqldb://{user}:{pswd}@localhost/{db}')
     session = Session(engine)
-    session.query(State).filter(State.name.like('%a%')).delete()
+    query = session.query(State).filter(State.name.like('%a%')).all()
+    for state in query:
+        session.delete(state)
     session.commit()
