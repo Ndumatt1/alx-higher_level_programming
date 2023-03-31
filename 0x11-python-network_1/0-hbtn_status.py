@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# This python script fetches http://alx-intranet.hbtn.io/status
+''' This python script fetches http://alx-intranet.hbtn.io/status '''
 
 if __name__ == '__main__':
     import urllib.request
-    request = urllib.request.Request('https://alx-intranet.hbtn.io/status')
-    with urllib.request.urlopen(request) as response:
+
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
         value = response.read()
         print('Body response:')
         print('\t - type:', type(value))
