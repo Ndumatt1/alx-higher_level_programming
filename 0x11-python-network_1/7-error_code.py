@@ -9,6 +9,6 @@ if __name__ == '__main__':
 
     with requests.get(argv[1]) as response:
         if (response.status_code >= 400):
-            print(f'Error code: {request.status_code}')
+            print(f'Error code: {response.status_code}')
         else:
             print(response.text)
