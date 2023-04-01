@@ -9,4 +9,6 @@ if __name__ == '__main__':
 
     with requests.get(argv[1]) as response:
         value = response.headers
+        if 'X-Request-Id' not in value.keys():
+            pass
         print(value['X-Request-Id'])
